@@ -15,50 +15,55 @@
             });
         </script>
         <style>
-            .rectangle {
-                /* Шторка будет фиксированна на протяжении всеъ проектов */
-                position: fixed;
-                /* Контейнер будет прикреплён к положению окна */
-                top: 0;
+            /* Настройки шторки */
+            .curtain {
+                /* Шторка будет фиксированна на протяжении всего сайта */
+                position: fixed; 
+                /* Прикрепление к верхнему углу */
+                top: 0;  
                 left: 0;
                 /* Размер будет меняться в зависимости от окна */
-                width: 100vh;
-                height: 10vh;
+                width: 100%;
+                height: 10%;
                 /* Цвет самого  */
                 background-color: black;
+                
+                /* Расположение кнопок по горизонтали */
                 display: flex;
-                justify-content: flex-start;
-                padding: auto;
-                padding-right: 10%;
-                padding-left: 30px;
-                align-items: center;
+                /* Расстояние между кнопками */
+                gap: 10%;
             }
-            .round-button {
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                background-color: #ccc;
-                border: none;
-                cursor: pointer;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0;
+            .main-button {
+                /* Установка положения относительно родительского */
+                position: relative;
+                top: 50%; /*По середине*/
+                left: 3%; /*С начала всей старницы*/
+                width: 8vh;
+                height: 8vh;
+                transform: translate(-50%, -50%); /* Смещаем дочерний элемент на -50% от его собственных размеров */
+                /* Округление кнопки */
+                border-radius: 33%;
+                /* Устновка картинки для кнопки */
+                background-image: url(https://avatars.githubusercontent.com/u/88632284?v=4);
+                background-size: cover; 
+
             }
 
-            .round-button img {
-                max-width: 8vh;
-                max-height: 8vh;
-                border-radius: 30%;
-            }
         </style>
     </head>   
 <body>
     <p>Hello there!</p>
-    <div class="rectangle">
-        <button class="round-button" id="main">
-            <img src="https://avatars.githubusercontent.com/u/88632284?v=4" alt="Изображение на кнопке">
+    <!-- Отвечает за шторку -->
+    <div class="curtain">
+        <!-- Отвечает за кнопку возврата в шторке -->
+        <button class="main-button" id="main"></button>
+        <!-- Отвечает за навигацию по странице -->
+        <div class="naviagation">
+        </div>
+        <!-- Отвечает за кнопку, котрая меняет цвета на сайте -->
+        <button class="theme-change">
         </button>
+        </div>
     </div>
 </body>
 </html>
