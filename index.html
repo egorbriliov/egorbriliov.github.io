@@ -2,6 +2,18 @@
 <html>
     <head>
         <title>Egor Briliov</title>
+        <script>
+            // Получаем ссылку на кнопку
+            const button = document.getElementById('main');
+
+            // Добавляем обработчик события "click" на кнопку
+            button.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        </script>
         <style>
             .rectangle {
                 /* Шторка будет фиксированна на протяжении всеъ проектов */
@@ -12,6 +24,7 @@
                 /* Размер будет меняться в зависимости от окна */
                 width: 100vh;
                 height: 10vh;
+                /* Цвет самого  */
                 background-color: black;
                 display: flex;
                 justify-content: flex-start;
@@ -43,7 +56,7 @@
 <body>
     <p>Hello there!</p>
     <div class="rectangle">
-        <button class="round-button">
+        <button class="round-button" id="main">
             <img src="https://avatars.githubusercontent.com/u/88632284?v=4" alt="Изображение на кнопке">
         </button>
     </div>
