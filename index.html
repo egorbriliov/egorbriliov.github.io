@@ -3,9 +3,11 @@
     <head>
         <title>Egor Briliov</title>
         <script>
+            
+            
+            // Возрат в самое начало  
             // Получаем ссылку на кнопку
             const button = document.getElementById('main');
-
             // Добавляем обработчик события "click" на кнопку
             button.addEventListener('click', function() {
                 window.scrollTo({
@@ -13,8 +15,48 @@
                     behavior: 'smooth'
                 });
             });
+
+            
+            // Смена темы
+            // Получаем ссылку на кнопку
+            const themeToggle = document.getElementById('theme-change-button');
+            // Определяем функцию для смены темы
+            function toggleTheme() {
+            // Получаем текущую тему из localStorage
+                let currentTheme = localStorage.getItem('theme');
+                // Если текущая тема 'light', меняем её на 'dark'
+                if (currentTheme === 'light') {
+                    setTheme('dark');
+                } 
+                // Если текущая тема 'dark' или её нет, меняем на 'light'
+                else {
+                    setTheme('light');
+                }
+                
+            }
+            // Функция для установки темы
+            function setTheme(theme) {
+            // Сохраняем тему в localStorage
+            localStorage.setItem('theme', theme);
+
+            // Устанавливаем атрибут data-theme на корневом элементе
+            document.documentElement.setAttribute('data-theme', theme);
+            }
+
+            // Добавляем обработчик клика на кнопку
+            themeToggle.addEventListener('click', toggleTheme);
+
         </script>
         <style>
+            /* Стили для темной темы */
+            [data-theme="dark"] {
+            --bg-color: black;
+            }
+            /* Стили для светлой темы */
+            [data-theme="light"] {
+            --bg-color: white;
+            }
+
             /* Настройки шторки */
             .curtain {
                 /* Шторка будет фиксированна на протяжении всего сайта */
@@ -26,7 +68,7 @@
                 width: 100%;
                 height: 10%;
                 /* Цвет самого  */
-                background-color: black;
+                background-color: var(--bg-color);
                 
                 /* Расположение кнопок по горизонтали */
                 display: flex;
@@ -34,6 +76,27 @@
                 gap: 10%;
             }
             .main-button {
+                /* Установка положения относительно родительского */
+                position: relative;
+                top: 50%; /*По середине*/
+                left: 3%; /*С начала всей старницы*/
+                width: 8vh;
+                height: 8vh;
+                transform: translate(-50%, -50%); /* Смещаем дочерний элемент на -50% от его собственных размеров */
+                /* Округление кнопки */
+                border-radius: 33%;
+                /* Устновка картинки для кнопки */
+                background-image: url(https://avatars.githubusercontent.com/u/88632284?v=4);
+                background-size: cover; 
+
+            }
+            .curtain-navagation {
+                /* Контейнер для кнопок по середине*/
+                /* Выравнивание по середине в родительском контейнере в середине */
+                left: 50%;
+                top: 50%;
+            }
+            .theme-change {
                 /* Установка положения относительно родительского */
                 position: relative;
                 top: 50%; /*По середине*/
@@ -59,9 +122,10 @@
         <button class="main-button" id="main"></button>
         <!-- Отвечает за навигацию по странице -->
         <div class="naviagation">
+            <button id="noname"></button>
         </div>
         <!-- Отвечает за кнопку, котрая меняет цвета на сайте -->
-        <button class="theme-change">
+        <button class="theme-change" id="theme-change-button">
         </button>
         </div>
     </div>
