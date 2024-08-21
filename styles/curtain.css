@@ -1,35 +1,52 @@
-/* Стили для темной темы */
-[data-theme="dark"] {
---bg-color: black;
-}
-/* Стили для светлой темы */
+
+/* Settings for light theme*/
 [data-theme="light"] {
 --bg-color: white;
 }
 
-    /* Настройки шторки */
+/* Settings for dark theme */
+[data-theme="dark"] 
+{
+--bg-color: black;
+}
+
+/* Curtain container settings */
 .curtain {
-    /* Шторка будет фиксированна на протяжении всего сайта */
+    /* Curtain will be fixed when user will be scrole site */
     position: fixed; 
-    /* Прикрепление к верхнему углу */
-    top: 0;  
+    /* The curtain will be on top */
+    top: 0;
     left: 0;
-    /* Размер будет меняться в зависимости от окна */
+    /* Adaptable size */
     width: 100%;
     height: 10%;
-    /* Цвет самого  */
+    /* Adaptable for theme background  */
     background-color: var(--bg-color);
-    
-    /* Расположение кнопок по горизонтали */
+
     display: flex;
-    /* Расстояние между кнопками */
-    gap: 10%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
+
+
+.curtainButtonBox {
+    display: flex;
+    flex-direction: row;
+    top: 5vh;
+    /* Adaptable size */
+    width: 90%;
+    height: 100%;
+    justify-content: space-between;
+
+}
+
+/* The button that was used to return the site to the beginning */
 .main-button {
+    margin-left: 8vh;
     /* Установка положения относительно родительского */
     position: relative;
     top: 50%; /*По середине*/
-    left: 3%; /*С начала всей старницы*/
     width: 8vh;
     height: 8vh;
     transform: translate(-50%, -50%); /* Смещаем дочерний элемент на -50% от его собственных размеров */
@@ -38,26 +55,39 @@
     /* Устновка картинки для кнопки */
     background-image: url(https://avatars.githubusercontent.com/u/88632284?v=4);
     background-size: cover; 
+    border: none;
 
 }
 .curtain-navagation {
+    margin-right: 8vh;
     /* Контейнер для кнопок по середине*/
     /* Выравнивание по середине в родительском контейнере в середине */
     left: 50%;
     top: 50%;
 }
-.theme-change {
-    /* Установка положения относительно родительского */
+
+.buttonTheme {
     position: relative;
     top: 50%; /*По середине*/
-    left: 3%; /*С начала всей старницы*/
+    
+    /*С начала всей старницы*/
     width: 8vh;
     height: 8vh;
     transform: translate(-50%, -50%); /* Смещаем дочерний элемент на -50% от его собственных размеров */
     /* Округление кнопки */
     border-radius: 33%;
     /* Устновка картинки для кнопки */
-    background-image: url(https://w7.pngwing.com/pngs/528/1014/png-transparent-computer-icons-incandescent-light-bulb-symbol-light-hand-lamp-sign.png);
     background-size: cover; 
+    /* border: none; */
+    background-color: transparent;
+    
+}
 
+.material-symbols-outlined {
+  size: 7vh;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 500,
+  'GRAD' 1,
+  'opsz' 600
 }
