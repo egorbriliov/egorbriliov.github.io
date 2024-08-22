@@ -1,13 +1,15 @@
 
 /* Settings for light theme*/
 [data-theme="light"] {
---bg-color: white;
+--bg-color: grey;
+--theme-button-color: black;
 }
 
 /* Settings for dark theme */
 [data-theme="dark"] 
 {
 --bg-color: black;
+--theme-button-color: white;
 }
 
 /* Curtain container settings */
@@ -64,6 +66,7 @@
     background-size: cover; 
     /* border: none; */
     background-color: transparent;
+    border: none;
     
 }
 
@@ -73,5 +76,6 @@
   'FILL' 0,
   'wght' 500,
   'GRAD' 1,
-  'opsz' 600
+  'opsz' 600;
+  color: var(--theme-button-color);;
 }
