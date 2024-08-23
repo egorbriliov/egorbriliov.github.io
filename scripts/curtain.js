@@ -14,6 +14,7 @@ function themeToggle() {
         setTheme('light');
     }
     
+    
 }
 // Функция для установки темы
 function setTheme(theme) {
