@@ -1,10 +1,18 @@
 // Смена темы
+// Установка темы по умолчанию, как у пользователя в браузере
+function getCurrentTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    } else {
+      return 'light';
+    }
+  }
+
 
 // Определяем функцию для смены темы
 function themeToggle() {
 // Получаем текущую тему из localStorage
     let currentTheme = localStorage.getItem('theme');
-    console.log(currentTheme)
     // Если текущая тема 'light', меняем её на 'dark'
     if (currentTheme === 'light') {
         setTheme('dark');
@@ -13,7 +21,7 @@ function themeToggle() {
     else {
         setTheme('light');
     }
-    
+
     
 }
 // Функция для установки темы
@@ -26,6 +34,8 @@ document.documentElement.setAttribute('data-theme', theme);
 
 // 
 window.addEventListener("DOMContentLoaded", () => {
+    localStorage.setItem('theme', getCurrentTheme())
+    document.documentElement.setAttribute('data-theme', getCurrentTheme());
     // Получаем ссылку на кнопку
     let button = document.getElementById("buttonTheme");
     button.addEventListener("click", themeToggle)
