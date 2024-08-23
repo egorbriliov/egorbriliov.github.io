@@ -26,6 +26,8 @@
     /* Adaptable for theme background  */
     background-color: var(--bg-color);
 
+    transition: all 1s;
+
     display: flex;
     flex-direction: row;
     align-items: center;
