@@ -1,84 +1,44 @@
-
-/* Settings for light theme*/
-[data-theme="light"] {
---bg-color: grey;
---theme-button-color: black;
-}
-
-/* Settings for dark theme */
-[data-theme="dark"] 
-{
---bg-color: black;
---theme-button-color: white;
-}
-
-
-/* Curtain container settings */
 .curtain {
-    /* Curtain will be fixed when user will be scrole site */
-    position: fixed; 
-    /* The curtain will be on top */
+    position: fixed;
     top: 0;
     left: 0;
-    /* Adaptable size */
     width: 100%;
     height: 10%;
-    /* Adaptable for theme background  */
     background-color: var(--bg-color);
-
-    transition: all 1s;
-
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding-inline: 50px;
 }
 
-/* The button that was used to return the site to the beginning */
 .main-button {
-    margin-left: 8vh;
-    /* Установка положения относительно родительского */
-    position: relative;
-    width: 8vh;
-    height: 8vh; /* Смещаем дочерний элемент на -50% от его собственных размеров */
-    /* Округление кнопки */
-    border-radius: 33%;
-    /* Устновка картинки для кнопки */
-    background-image: url(https://avatars.githubusercontent.com/u/88632284?v=4);
-    background-size: cover; 
-    border: none;
-
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: none;
 }
-.curtain-navagation {
-    /* Контейнер для кнопок по середине*/
-    /* Выравнивание по середине в родительском контейнере в середине */
-    left: 50%;
-    top: 50%;
+
+.main-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
 }
 
 .buttonTheme {
-    margin-right: 8vh;
-    position: relative;
-    width: 8vh;
-    height: 8vh;
-    
-    
-    /* Округление кнопки */
-    border-radius: 33%;
-    /* Устновка картинки для кнопки */
-    background-size: cover; 
-    /* border: none; */
-    background-color: transparent;
-    border: none;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
 }
 
 .material-symbols-outlined {
-  size: 7vh;
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 500,
-  'GRAD' 1,
-  'opsz' 600;
-  color: var(--theme-button-color);;
+    font-size: 40px !important;
+    font-variation-settings: 'FILL' 0,
+    'wght' 500,
+    'GRAD' 1,
+    'opsz' 600;
+    color: var(--theme-button-color);;
 }
